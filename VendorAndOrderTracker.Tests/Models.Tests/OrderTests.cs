@@ -12,42 +12,60 @@ namespace VendorAndOrderTracker.Tests
     public void OrderConstructor_ConfirmPropertyMatchesIntendedValue_Title()
     {
       Order newOrder = new Order("title", "Description", 19, 3, 5, "2020-12-18"); // Title, description, price, bread amount, pastry amount, date
-      Assert.AreEqual("title", newOrder.Title);
+
+      string result = newOrder.Title;
+      
+      Assert.AreEqual("title", result);
     }
 
     [TestMethod]
     public void OrderConstructor_ConfirmPropertyMatchesIntendedValue_Description()
     {
       Order newOrder = new Order("title", "Description", 19, 3, 5, "2020-12-18"); // Title, description, price, bread amount, pastry amount, date
-      Assert.AreEqual("Description", newOrder.Description);
+
+      string result = newOrder.Description;
+
+      Assert.AreEqual("Description", result);
     }
 
     [TestMethod]
     public void OrderConstructor_ConfirmPropertyMatchesIntendedValue_Price()
     {
       Order newOrder = new Order("title", "Description", 19, 3, 5, "2020-12-18"); // Title, description, price, bread amount, pastry amount, date
-      Assert.AreEqual(19, newOrder.Price);
+
+      int result = newOrder.Price;
+
+      Assert.AreEqual(19, result);
     }
 
     [TestMethod]
     public void OrderConstructor_ConfirmPropertyMatchesIntendedValue_BreadAmount()
     {
       Order newOrder = new Order("title", "Description", 19, 3, 5, "2020-12-18"); // Title, description, price, bread amount, pastry amount, date
-      Assert.AreEqual(3, newOrder.BreadAmount);
+
+      int result = newOrder.BreadAmount;
+
+      Assert.AreEqual(3, result);
     }
 
     [TestMethod]
     public void OrderConstructor_ConfirmPropertyMatchesIntendedValue_PastryAmount()
     {
       Order newOrder = new Order("title", "Description", 19, 3, 5, "2020-12-18"); // Title, description, price, bread amount, pastry amount, date
-      Assert.AreEqual(5, newOrder.PastryAmount);
+
+      int result = newOrder.PastryAmount;
+
+      Assert.AreEqual(5, result);
     }
 
     [TestMethod]
     public void OrderConstructor_ConfirmPropertyMatchesIntendedValue_Date()
     {
       Order newOrder = new Order("title", "Description", 19, 3, 5, "2020-12-18"); // Title, description, price, bread amount, pastry amount, date
-      Assert.AreEqual("2020-12-18", newOrder.Date);
+
+      string result = newOrder.Date;
+
+      Assert.AreEqual("2020-12-18", result);
     }
   }
 }
