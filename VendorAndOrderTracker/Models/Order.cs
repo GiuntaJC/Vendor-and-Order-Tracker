@@ -20,5 +20,6 @@ namespace VendorAndOrderTracker.Models
       PastryAmount = pastryAmount;
       Date = date;
     }
+
   }
 }

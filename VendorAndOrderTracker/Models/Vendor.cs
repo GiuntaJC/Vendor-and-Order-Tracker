@@ -15,5 +15,10 @@ namespace VendorAndOrderTracker.Models
     Description = description;
     Orders = new List<Order>{};
   }
+  public void AddOrder(Order order)
+    {
+      Orders.Add(order);
+    }
+
   }
 }
