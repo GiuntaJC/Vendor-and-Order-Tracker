@@ -1,6 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using VendorAndOrderTracker.Models;
-
 namespace VendorAndOrderTracker.Tests
 {
   [TestClass]
