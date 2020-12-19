@@ -33,12 +33,13 @@ namespace VendorAndOrderTracker.Tests
     {
       Order newOrder = new Order("title", "Description", 19, 3, 5, "2020-12-18"); // Title, description, price, bread amount, pastry amount, date
       Vendor newVendor = new Vendor("Suzie's Cafe", "Description"); // VendorName, description, Order list
+      List<Order> newList = new List<Order> { newOrder };
       newVendor.AddOrder(newOrder);
 
       List<Order> result = newVendor.Orders;
 
 
-      Assert.AreEqual(newOrder, result);
+      CollectionAssert.AreEqual(newList, result);
     }
 
   }
