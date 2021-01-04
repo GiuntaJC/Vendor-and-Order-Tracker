@@ -10,6 +10,7 @@ namespace VendorAndOrderTracker.Models
     public int BreadAmount { get; set; }
     public int PastryAmount { get; set; }
     public string Date { get; set; }
+    public int Id { get; }
 
     public Order(string title, string description, int price, int breadAmount, int pastryAmount, string date)
     {
