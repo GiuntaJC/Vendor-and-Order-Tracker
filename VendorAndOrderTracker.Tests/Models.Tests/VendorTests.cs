@@ -1,16 +1,30 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using System.Collections.Generic;
 using VendorAndOrderTracker.Models;
 
 namespace VendorAndOrderTracker.Tests
 {
   [TestClass]
-  public class VendorTests
+  public class VendorTests : IDisposable
   {
+    public void Dispose()
+    {
+      Vendor.ClearAll();
+    }
+
+    [TestMethod]
+    public void VendorConstructor_ConfirmIdIsAssignedToVendor_Id()
+    {
+      Vendor newVendor = new Vendor("Suzie's Cafe", "Description"); // VendorName, description
+
+      int result = newVendor.Id;
+      Assert.AreEqual(result, 1);
+    }
     [TestMethod]
     public void VendorConstructor_ConfirmPropertyMatchesIntendedValue_VendorName()
     {
-      Vendor newVendor = new Vendor("Suzie's Cafe", "Description"); // VendorName, description, Order list
+      Vendor newVendor = new Vendor("Suzie's Cafe", "Description"); // VendorName, description
 
       string result = newVendor.VendorName;
 
@@ -20,7 +34,7 @@ namespace VendorAndOrderTracker.Tests
     [TestMethod]
     public void VendorConstructor_ConfirmPropertyMatchesIntendedValue_Description()
     {
-      Vendor newVendor = new Vendor("Suzie's Cafe", "Description"); // VendorName, description, Order list
+      Vendor newVendor = new Vendor("Suzie's Cafe", "Description"); // VendorName, description
 
       string result = newVendor.Description;
 
@@ -31,7 +45,7 @@ namespace VendorAndOrderTracker.Tests
     public void AddOrder_AssociatesOrderWithVendor_OrderList()
     {
       Order newOrder = new Order("title", "Description", 19, 3, 5, "2020-12-18"); // Title, description, price, bread amount, pastry amount, date
-      Vendor newVendor = new Vendor("Suzie's Cafe", "Description"); // VendorName, description, Order list
+      Vendor newVendor = new Vendor("Suzie's Cafe", "Description"); // VendorName, description
       List<Order> newList = new List<Order> { newOrder };
       newVendor.AddOrder(newOrder);
 

@@ -10,6 +10,7 @@ namespace VendorAndOrderTracker.Models
     public int BreadAmount { get; set; }
     public int PastryAmount { get; set; }
     public string Date { get; set; }
+    private static List<Order> _instances = new List<Order> {};
     public int Id { get; }
 
     public Order(string title, string description, int price, int breadAmount, int pastryAmount, string date)
@@ -20,6 +21,8 @@ namespace VendorAndOrderTracker.Models
       BreadAmount = breadAmount;
       PastryAmount = pastryAmount;
       Date = date;
+      _instances.Add(this);
+      Id = _instances.Count;
     }
 
   }
