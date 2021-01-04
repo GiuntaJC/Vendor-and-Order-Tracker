@@ -73,7 +73,7 @@ namespace VendorAndOrderTracker.Tests
       Vendor newVendor = new Vendor("Suzie's Cafe", "Description"); // VendorName, description
       Vendor otherVendor = new Vendor("Some Other Guy", "Description"); // VendorName, description
 
-      List<Vendor> result = Vendor.Find(2);
+      Vendor result = Vendor.Find(2);
 
       Assert.AreEqual(result, otherVendor);
     }
