@@ -30,9 +30,9 @@ namespace VendorAndOrderTracker.Models
     return _instances;
   }
 
-  public static Vendor Find(int id)
+  public static Vendor Find(int vendorId)
   {
-    return _instances[id - 1];
+    return _instances[vendorId - 1];
   }
 
   public void AddOrder(Order order)

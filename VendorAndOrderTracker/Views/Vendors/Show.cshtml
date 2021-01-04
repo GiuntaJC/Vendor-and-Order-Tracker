@@ -5,7 +5,7 @@
 
 <h2>Orders: </h2>
 <ol>
-  @foreach (Order order in @Model["orders"])
+  @foreach (Order order in Model)
   {
     <li><a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Title --- @order.Date</a></li>  // href must be single quotes in this case? Seems to throw error if quote types are reversed
   }
