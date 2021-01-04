@@ -21,6 +21,7 @@ namespace VendorAndOrderTracker.Tests
       int result = newVendor.Id;
       Assert.AreEqual(result, 1);
     }
+
     [TestMethod]
     public void VendorConstructor_ConfirmPropertyMatchesIntendedValue_VendorName()
     {
@@ -53,6 +54,17 @@ namespace VendorAndOrderTracker.Tests
 
 
       CollectionAssert.AreEqual(newList, result);
+    }
+
+    [TestMethod]
+    public void GetAll_ReturnsAllVendors_VendorList()
+    {
+      Vendor newVendor = new Vendor("Suzie's Cafe", "Description"); // VendorName, description
+      List<Vendor> newList = new List<Vendor> {newVendor};
+
+      List<Vendor> result = Vendor.GetAll();
+
+      CollectionAssert.AreEqual(result, newList);
     }
 
   }
