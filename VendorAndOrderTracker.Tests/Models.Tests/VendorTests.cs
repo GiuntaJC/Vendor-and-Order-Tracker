@@ -67,5 +67,16 @@ namespace VendorAndOrderTracker.Tests
       CollectionAssert.AreEqual(result, newList);
     }
 
+    [TestMethod]
+    public void Find_ReturnsAllVendors_Vendor()
+    {
+      Vendor newVendor = new Vendor("Suzie's Cafe", "Description"); // VendorName, description
+      Vendor otherVendor = new Vendor("Some Other Guy", "Description"); // VendorName, description
+
+      List<Vendor> result = Vendor.Find(2);
+
+      Assert.AreEqual(result, otherVendor);
+    }
+
   }
 }
