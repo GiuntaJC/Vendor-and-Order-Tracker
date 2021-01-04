@@ -24,6 +24,7 @@ namespace VendorAndOrderTracker.Controllers
     public ActionResult Show(int id)
     {
       Vendor currentVendor = Vendor.Find(id);
+      List<Order> orderList = currentVendor.Orders;
       return View(currentVendor);
     }
 
@@ -42,12 +43,13 @@ namespace VendorAndOrderTracker.Controllers
     }
 
     [HttpPost("/vendors/{vendorId}/orders")]
-    public ActionResult Create(int vendorId, string name, int pastryAmount, int breadAmount, int price, string orderDate, string desc)
+    public ActionResult Create(int vendorId, string orderName, int breadCount, int pastryCount, int price, string orderDate, string orderDescription)
     {
       Vendor currentVendor = Vendor.Find(vendorId);
-      Order newOrder = new Order(name, desc, price, breadAmount, pastryAmount, orderDate);
+      Order newOrder = new Order(orderName, orderDescription, price, breadCount, pastryCount, orderDate);
       currentVendor.AddOrder(newOrder);
-      return View("Show");
+      List<Order> orderList = currentVendor.Orders;
+      return RedirectToAction("Index");
     }
   }
 }

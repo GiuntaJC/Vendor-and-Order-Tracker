@@ -1,15 +1,15 @@
-<h1>Add new order for @Model.Name</h1><br><br>
+<h1>Add new order for @Model.VendorName</h1><br><br>
 
 <form action="/vendors/@Model.Id/orders" method="post">
   <input id="vendorId" name ="vendorId" type="hidden" value="@Model.Id"><br>
   <input id="orderName" name ="orderName" type="text" placeholder="Name of the order" required><br>
-  <input id="orderDate" name="orderDate" type="date" placeholder="date of the order" required><br>
   <input id="breadCount" name ="breadCount" type="number" placeholder="How many loaves of bread?" min="0" required><br>
   <input id="pastryCount" name ="pastryCount" type="number" placeholder="How many pastries?" min="0" required><br>
   $<input id="price" name ="price" type="number" placeholder="Total order price" min="0" required><br>
+  <input id="orderDate" name="orderDate" type="date" placeholder="date of the order" required><br>
   <input id="orderDescription" name ="orderDescription" type="text" placeholder="Description" required><br>
   <button type="submit">Add Order!</button>
 </form>
 <br><br>
-<a href="/vendors/@Model.Id/orders">Cancel and return to vendor</a><br>
+<a href="/vendors/@Model.Id">Cancel and return to vendor</a><br>
 <a href="/">Cancel and return to home screen</a>
