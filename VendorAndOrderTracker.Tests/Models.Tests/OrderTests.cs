@@ -64,5 +64,16 @@ namespace VendorAndOrderTracker.Tests
 
       Assert.AreEqual("2020-12-18", result);
     }
+
+    [TestMethod]
+    public void Find_ReturnsAllOrders_Order()
+    {
+      Order newOrder = new Order("title", "Description", 19, 3, 5, "2020-12-18"); // Title, description, price, bread amount, pastry amount, date
+      Order otherOrder = new Order("other title", "other Description", 19, 3, 5, "2021-1-4"); // Title, description, price, bread amount, pastry amount, date
+
+      Order result = Order.Find(2);
+
+      Assert.AreEqual(result, otherOrder);
+    }
   }
 }
