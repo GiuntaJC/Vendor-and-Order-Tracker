@@ -1,10 +1,15 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using VendorAndOrderTracker.Models;
 namespace VendorAndOrderTracker.Tests
 {
   [TestClass]
-  public class OrderTests
+  public class OrderTests : IDisposable
   {
+    public void Dispose()
+    {
+      Order.ClearAll();
+    }
     [TestMethod]
     public void OrderConstructor_ConfirmPropertyMatchesIntendedValue_Title()
     {
@@ -66,7 +71,7 @@ namespace VendorAndOrderTracker.Tests
     }
 
     [TestMethod]
-    public void Find_ReturnsAllOrders_Order()
+    public void Find_ReturnsChosenOrder_Order()
     {
       Order newOrder = new Order("title", "Description", 19, 3, 5, "2020-12-18"); // Title, description, price, bread amount, pastry amount, date
       Order otherOrder = new Order("other title", "other Description", 19, 3, 5, "2021-1-4"); // Title, description, price, bread amount, pastry amount, date

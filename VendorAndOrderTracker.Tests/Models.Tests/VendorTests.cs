@@ -68,7 +68,7 @@ namespace VendorAndOrderTracker.Tests
     }
 
     [TestMethod]
-    public void Find_ReturnsAllVendors_Vendor()
+    public void Find_ReturnsChosenVendor_Vendor()
     {
       Vendor newVendor = new Vendor("Suzie's Cafe", "Description"); // VendorName, description
       Vendor otherVendor = new Vendor("Some Other Guy", "Description"); // VendorName, description

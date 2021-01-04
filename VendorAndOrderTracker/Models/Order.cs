@@ -25,5 +25,14 @@ namespace VendorAndOrderTracker.Models
       Id = _instances.Count;
     }
 
+  public static void ClearAll()
+  {
+    _instances.Clear();
+  }
+  public static Order Find(int orderId)
+  {
+    return _instances[orderId - 1];
+  }
+
   }
 }
