@@ -11,9 +11,9 @@ Pierre's vendor tracker allowes the user to add a list of vendors, each containi
 ## Setup/Installation Requirements
 
 * _Download or clone this repository by copying the link from the green "code" dropdown menu and running "git clone {copied link}" in the command line_
-* _open console in root/VendorAndOrderTracker_
-* _run "dotnet build" root/VendorAndOrderTracker_
-* _run "dotnet run" root/VendorAndOrderTracker_
+* _open console in project-root/VendorAndOrderTracker_
+* _run "dotnet build" project-root/VendorAndOrderTracker_
+* _run "dotnet run" project-root/VendorAndOrderTracker_
 
 ## Known Bugs
 
